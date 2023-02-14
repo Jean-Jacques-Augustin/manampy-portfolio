@@ -1,4 +1,4 @@
-import {AppBar, Container, Hidden, Toolbar, Typography} from "@mui/material";
+import {AppBar, Button, Container, Hidden, Toolbar, Typography} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 import {useState} from "react";
@@ -19,6 +19,11 @@ const Navbar = () => {
      * sm : small = 600px
      * xs : extra small = 0px
      */
+
+    function handleChangeModeAlt(e : any) {
+        console.log(e.target.value);
+    }
+
 
     return (
         <AppBar>
@@ -47,6 +52,11 @@ const Navbar = () => {
                                 <Typography variant={"h6"}>Contact</Typography>
                             </div>
                         </Hidden>
+                        <Button
+                            onChange={handleChangeModeAlt}
+                        >
+                            <input type="checkbox" id="switch" onChange={handleChangeModeAlt}/>
+                        </Button>
                         <Hidden smUp>
                             <div>
                                 {
